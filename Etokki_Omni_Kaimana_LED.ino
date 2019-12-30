@@ -121,7 +121,7 @@ int pollSwitches(void) {
             //setLEDRandomColor(LED_JOY_R);
             kaimana.setLED(LED_JOY_D, BLACK);
             kaimana.setLED(LED_JOY_L, BLACK);
-            kaimana.setLED(LED_JOY_R, WHITE);
+            kaimana.setLED(LED_JOY_R, CYAN);
             kaimana.setLED(LED_JOY_U, BLACK);
             iLED[LED_JOY_L] = false;
             iLED[LED_JOY_R] = true;
@@ -131,7 +131,7 @@ int pollSwitches(void) {
         case ATTACK_LEFT: // left
             //setLEDRandomColor(LED_JOY_L);
             kaimana.setLED(LED_JOY_D, BLACK);
-            kaimana.setLED(LED_JOY_L, WHITE);
+            kaimana.setLED(LED_JOY_L, CYAN);
             kaimana.setLED(LED_JOY_R, BLACK);
             kaimana.setLED(LED_JOY_U, BLACK);
             iLED[LED_JOY_L] = true;
@@ -141,7 +141,7 @@ int pollSwitches(void) {
             break;
         case ATTACK_DOWN: // down
             //setLEDRandomColor(LED_JOY_D);
-            kaimana.setLED(LED_JOY_D, WHITE);
+            kaimana.setLED(LED_JOY_D, CYAN);
             kaimana.setLED(LED_JOY_L, BLACK);
             kaimana.setLED(LED_JOY_R, BLACK);
             kaimana.setLED(LED_JOY_U, BLACK);
@@ -151,9 +151,9 @@ int pollSwitches(void) {
             iLED[LED_JOY_D] = true;
             break;
         case ATTACK_DOWN + ATTACK_RIGHT: // down + right
-            kaimana.setLED(LED_JOY_D, WHITE);
+            kaimana.setLED(LED_JOY_D, CYAN);
             kaimana.setLED(LED_JOY_L, BLACK);
-            kaimana.setLED(LED_JOY_R, WHITE);
+            kaimana.setLED(LED_JOY_R, CYAN);
             kaimana.setLED(LED_JOY_U, BLACK);
             iLED[LED_JOY_L] = false;
             iLED[LED_JOY_R] = true;
@@ -161,8 +161,8 @@ int pollSwitches(void) {
             iLED[LED_JOY_D] = true;
             break;
         case ATTACK_DOWN + ATTACK_LEFT: // down + left
-            kaimana.setLED(LED_JOY_D, WHITE);
-            kaimana.setLED(LED_JOY_L, WHITE);
+            kaimana.setLED(LED_JOY_D, CYAN);
+            kaimana.setLED(LED_JOY_L, CYAN);
             kaimana.setLED(LED_JOY_R, BLACK);
             kaimana.setLED(LED_JOY_U, BLACK);
             iLED[LED_JOY_L] = true;
@@ -174,7 +174,7 @@ int pollSwitches(void) {
             kaimana.setLED(LED_JOY_D, BLACK);
             kaimana.setLED(LED_JOY_L, BLACK);
             kaimana.setLED(LED_JOY_R, BLACK);
-            kaimana.setLED(LED_JOY_U, WHITE);
+            kaimana.setLED(LED_JOY_U, CYAN);
             iLED[LED_JOY_L] = false;
             iLED[LED_JOY_R] = false;
             iLED[LED_JOY_U] = true;
@@ -183,8 +183,8 @@ int pollSwitches(void) {
         case ATTACK_UP + ATTACK_RIGHT: // up + right
             kaimana.setLED(LED_JOY_D, BLACK);
             kaimana.setLED(LED_JOY_L, BLACK);
-            kaimana.setLED(LED_JOY_R, WHITE);
-            kaimana.setLED(LED_JOY_U, WHITE);
+            kaimana.setLED(LED_JOY_R, CYAN);
+            kaimana.setLED(LED_JOY_U, CYAN);
             iLED[LED_JOY_L] = false;
             iLED[LED_JOY_R] = true;
             iLED[LED_JOY_U] = true;
@@ -192,9 +192,9 @@ int pollSwitches(void) {
             break;
         case ATTACK_UP + ATTACK_LEFT:  // up + left
             kaimana.setLED(LED_JOY_D, BLACK);
-            kaimana.setLED(LED_JOY_L, WHITE);
+            kaimana.setLED(LED_JOY_L, CYAN);
             kaimana.setLED(LED_JOY_R, BLACK);
-            kaimana.setLED(LED_JOY_U, WHITE);
+            kaimana.setLED(LED_JOY_U, CYAN);
             iLED[LED_JOY_L] = true;
             iLED[LED_JOY_R] = false;
             iLED[LED_JOY_U] = true;
@@ -229,8 +229,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_HOME);
-            kaimana.setLED(LED_HOME, WHITE);
+            setLEDRandomColor(LED_HOME);
             iLED[LED_HOME] = true;
         }
     }
@@ -250,8 +249,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_SELECT);
-            kaimana.setLED(LED_SELECT, WHITE);
+            setLEDRandomColor(LED_SELECT);
             iLED[LED_SELECT] = true;
         }
     }
@@ -269,8 +267,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_START);
-            kaimana.setLED(LED_START, WHITE);
+            setLEDRandomColor(LED_START);
             iLED[LED_START] = true;
         }
     }
@@ -289,8 +286,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_P1);
-            kaimana.setLED(LED_P1, WHITE);
+            setLEDRandomColor(LED_P1);
             iLED[LED_P1] = true;
         }
     }
@@ -309,8 +305,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_P2);
-            kaimana.setLED(LED_P2, WHITE);
+            setLEDRandomColor(LED_P2);
             iLED[LED_P2] = true;
         }
     }
@@ -329,8 +324,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_P3);
-            kaimana.setLED(LED_P3, WHITE);
+            setLEDRandomColor(LED_P3);
             iLED[LED_P3] = true;
         }
     }
@@ -349,8 +343,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_P4);
-            kaimana.setLED(LED_P4, WHITE);
+            setLEDRandomColor(LED_P4);
             iLED[LED_P4] = true;
         }
     }
@@ -369,8 +362,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_K1);
-            kaimana.setLED(LED_K1, WHITE);
+            setLEDRandomColor(LED_K1);
             iLED[LED_K1] = true;
         }
     }
@@ -389,8 +381,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_K2);
-            kaimana.setLED(LED_K2, WHITE);
+            setLEDRandomColor(LED_K2);
             iLED[LED_K2] = true;
         }
     }
@@ -409,8 +400,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_K3);
-            kaimana.setLED(LED_K3, WHITE);
+            setLEDRandomColor(LED_K3);
             iLED[LED_K3] = true;
         }
     }
@@ -429,8 +419,7 @@ int pollSwitches(void) {
         }
         else {
             // select new color when switch is first activated
-            //setLEDRandomColor(LED_K4);
-            kaimana.setLED(LED_K4, WHITE);
+            setLEDRandomColor(LED_K4);
             iLED[LED_K4] = true;
         }
     }
@@ -439,6 +428,7 @@ int pollSwitches(void) {
         kaimana.setLED(LED_K4, BLACK);
         iLED[LED_K4] = false;
     }
+    
     // convert joystick, P1-P4, K1-K4 into a single unsigned int
     switchActivity = joystickDirection + switchActivity;
     kaimana.switchHistorySet(switchActivity);
@@ -460,26 +450,20 @@ int pollSwitches(void) {
     if( kaimana.switchHistoryTest( COMBO_PATTERN_4A ) )
     animation_combo_4();
     // combo #3
-    // test for: Tatsumaki Senpukyaku (Hurricane Kick)
-    // combo is: DOWN, DOWN+LEFT, LEFT, LEFT+K1 or LEFT+K2
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_3A ) )
-    animation_combo_3();
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_3B ) )
+    // test for: 214 + K or 236 + K
+    if(kaimana.switchHistoryTest(COMBO_PATTERN_3A) || kaimana.switchHistoryTest(COMBO_PATTERN_3B) || kaimana.switchHistoryTest(COMBO_PATTERN_3C) || kaimana.switchHistoryTest(COMBO_PATTERN_3D) || kaimana.switchHistoryTest(COMBO_PATTERN_3E) || kaimana.switchHistoryTest(COMBO_PATTERN_3F))
     animation_combo_3();
     // combo #2
-    // test for: Ryu Shoryuken (Dragon Punch)
-    // combo is: RIGHT, <NONE>, DOWN, DOWN+RIGHT, DOWN+RIGHT+P1 or DOWN+RIGHT+P2
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_2A ) )
-    animation_combo_2();
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_2B ) )
+    // test for: 623 + P or 421 + P
+    if(kaimana.switchHistoryTest(COMBO_PATTERN_2A) || kaimana.switchHistoryTest(COMBO_PATTERN_2B) || kaimana.switchHistoryTest(COMBO_PATTERN_2C) || kaimana.switchHistoryTest(COMBO_PATTERN_2D) || kaimana.switchHistoryTest(COMBO_PATTERN_2E) || kaimana.switchHistoryTest(COMBO_PATTERN_2F))
     animation_combo_2();
     // combo #1
-    // test for: Ryu Hadouken (Fireball)
-    // combo is: DOWN, DOWN+RIGHT, RIGHT, RIGHT+P1 or RIGHT+P2
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_1A ) )
-    animation_combo_1();
-    if( kaimana.switchHistoryTest( COMBO_PATTERN_1B ) )
-    animation_combo_1();
+    // test for: 236 + P or 214 + P
+    if(kaimana.switchHistoryTest(COMBO_PATTERN_1A) || kaimana.switchHistoryTest(COMBO_PATTERN_1B) || kaimana.switchHistoryTest(COMBO_PATTERN_1C))
+    animation_combo_1A();
+    if(kaimana.switchHistoryTest(COMBO_PATTERN_1D) || kaimana.switchHistoryTest(COMBO_PATTERN_1E) || kaimana.switchHistoryTest(COMBO_PATTERN_1F))
+    animation_combo_1B();
+    
     // zero active switch counter (note: 4 way joystick counts as 1)
     iActiveSwitchCount = 0;
     // set LED color based on switch

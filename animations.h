@@ -53,12 +53,12 @@ extern Kaimana kaimana;
 
 
 
-// street figher 4 - ryu's special moves (combos)
-// http://www.eventhubs.com/guides/2008/jul/06/ryu-street-fighter-4-character-guide/
-//
-void animation_combo_1(void);    // Hadouken (Fireball)
-void animation_combo_2(void);    // Shoryuken (Dragon Punch)
-void animation_combo_3(void);    // Tatsumaki Senpukyaku (Hurricane Kick)
+// Special input animations (assumming player 1 side)\
+// Based on Street Fighter's default 6-button layout
+void animation_combo_1A(void);   // 236 + P
+void animation_combo_1B(void);   // 214 + P
+void animation_combo_2(void);    // 623 + P or 421 + P
+void animation_combo_3(void);    // 214 + K or 236 + K
 void animation_combo_4(void);    // Super — Shinkuu Hadouken
 void animation_combo_5(void);    // Ultra 1 — Metsu Hadouken
 void animation_combo_6(void);    // Ultra 2 — Metsu Hadouken
