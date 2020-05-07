@@ -23,7 +23,7 @@
 //  Created:  October 24, 2013    zonbipanda // gmail.com  -- Arduino 1.0.5 Support
 //  Revised:  October 29, 2013    zonbipanda // gmail.com
 //  Revised:  April   11, 2015    zonbipanda // gmail.com  -- Arduino 1.6.3 Support
-//
+//  Revised:  May      6, 2020    tkheang  -- Removed unused animations
 
 #ifndef __animations_h__
 #define __animations_h__
@@ -38,7 +38,6 @@
 
 extern Kaimana kaimana;
 
-
 #define IDLE_SIZE           768    // size of animation array
 #define IDLE_OFFSET_2       512    // used to create animation -- see code
 #define IDLE_OFFSET_1       256    // used to create animation -- see code
@@ -51,8 +50,6 @@ extern Kaimana kaimana;
 #define FIREBALL_OFFSET_1    96    // used to create animation -- see code
 #define FIREBALL_DELAY      350    // value in microseconds
 
-
-
 // Special input animations (assumming player 1 side)\
 // Based on Street Fighter's default 6-button layout
 void animation_combo_1A(void);   // 236 + P
@@ -63,21 +60,10 @@ void animation_combo_4(void);    // Super — Shinkuu Hadouken
 void animation_combo_5(void);    // Ultra 1 — Metsu Hadouken
 void animation_combo_6(void);    // Ultra 2 — Metsu Hadouken
 
-
 // other function prototypes
-void pressIntense(int index,int x,int iR, int iG, int iB);
 int animation_idle(void);
-void starryStartup(int iR,int iG, int iB);
-void showStartup(void);
-void walkyStartup(int iR,int iG, int iB);
-int walkyHoliday(int iR,int iG, int iB);
-int walkyIdle(int iR,int iG, int iB);
 void defaultStartup(void);
 void tourneyModeActivate(void);
 void tourneyModeDeactivate(void);
-int breatheSine(int iR, int iG, int iB);
-int breatheApple(int iR, int iG, int iB);
-int starryIdle(int iR,int iG, int iB);	
-int starryIdleMulti();
 
 #endif

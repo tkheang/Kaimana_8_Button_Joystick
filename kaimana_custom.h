@@ -1,4 +1,6 @@
 //  kaimana_local.h
+//
+//  Revised:  May      6, 2020    tkheang -- Defined constants for LEDs according to 14-button layout and 12 joystick LEDs
 
 #ifndef __kaimana_local_h__
 #define __kaimana_local_h__
@@ -11,27 +13,24 @@
 #include "settings.h"
 
 #define _START_DEFAULT_ANIMATION defaultStartup();
-#define _START_WALK_ANIMATION walkyStartup(_IDLE_COLOR);
-#define _START_STAR_ANIMATION starryStartup(_IDLE_COLOR);
 #define _IDLE_DEFAULT animation_idle();
-#define _IDLE_WALK_ANIMATION walkyIdle(_IDLE_COLOR);
-#define _IDLE_STAR_ANIMATION starryIdle(_IDLE_COLOR);	
-#define _IDLE_BREATHE_ANIMATION breatheSine(_IDLE_COLOR);
-#define _IDLE_BREATHE_MAC_ANIMATION breatheApple(_IDLE_COLOR);
 
 #ifdef _LED_ORDER_FULL
   // Map function names to Kaimana J2 LED index numbers 
-  // KAIMANA -> LED_K4 -> LED_K3 -> LED_K2 -> LED_K1 -> LED_P4 -> LED_P3 -> LED_P2 -> LED_P1 -> LED_START -> LED_SELECT -> LED_TP -> LED_JOY
-  // Neopixel LED ring uses two values for some reason:
-  // LED_JOY_U     31, 32
-  // LED_JOY_D     23, 24
-  // LED_JOY_L     27, 28
-  // LED_JOY_R     35, 36
+  // KAIMANA -> LED_K4 -> LED_K3 -> LED_K2 -> LED_K1 -> LED_P4 -> LED_P3 -> LED_P2 -> LED_P1 -> LED_START -> LED_SELECT -> LED_HOME -> LED_TP -> LED_R3 -> LED_L3 -> LED_Jx (joystick)
   //
-  #define  LED_JOY_U     32
-  #define  LED_JOY_D     24
-  #define  LED_JOY_L     28
-  #define  LED_JOY_R     36
+  #define  LED_J1      28
+  #define  LED_J2      29
+  #define  LED_J3      30
+  #define  LED_J4      31
+  #define  LED_J5      32
+  #define  LED_J6      33
+  #define  LED_J7      34
+  #define  LED_J8      35
+  #define  LED_J9      36
+  #define  LED_J10     37
+  #define  LED_J11     38
+  #define  LED_J12     39
   #define  LED_P4      8
   #define  LED_P4_B    9
   #define  LED_P3      10
@@ -52,13 +51,16 @@
   #define  LED_HOME_B  21
   #define  LED_SELECT  18
   #define  LED_SELECT_B 19
-  #define  LED_TP    22 // PS4 touchpad
-  #define  LED_TP_B  23
+  #define  LED_TP      22 // PS4 touchpad
+  #define  LED_TP_B    23
   #define  LED_START   16
   #define  LED_START_B 17
+  #define  LED_R3      24
+  #define  LED_R3_B    25
+  #define  LED_L3      26
+  #define  LED_L3_B    27 
   // maximum number of LEDs attached to Kaimana board
   #define  LED_COUNT   40
-  #define  LED_JOY_RING 12
 #endif
 
 // general definitions for delays and other customizable features
@@ -68,8 +70,8 @@
 #define  BOOT_COMPLETE_DELAY      500    // value in miliseconds
 #define  MAIN_LOOP_DELAY           50    // value in miliseconds - used main loop
 #define  IDLE_TIMEOUT_SECONDS       5    // value in seconds - normally 60 or 30 seconds but set very short for testing
-#define  IDLE_ANIMATION_DELAY       5    // value in miliseconds - use smaller value for faster idle animation playback
-#define  T_DELAY      			  250    
+#define  IDLE_ANIMATION_DELAY       3    // value in miliseconds - use smaller value for faster idle animation playback
+#define  T_DELAY      			      250    
 
 /*
 // definitions of RGB values use by random color generator: setLEDRandomColor(int)
@@ -85,23 +87,16 @@
 */
 
 // definitions of RGB values use by random color generator: setLEDRandomColor(int)
-#define  COLOR_RANDOM_1    RED    // lime green
-#define  COLOR_RANDOM_2    ORANGE    // purple
-#define  COLOR_RANDOM_3    YELLOW    // blue
-#define  COLOR_RANDOM_4    GREEN    // cyan
-#define  COLOR_RANDOM_5    CYAN    // cobalt blue
-#define  COLOR_RANDOM_6    BLUE    // red
-#define  COLOR_RANDOM_7    PURPLE    // orange
-#define  COLOR_RANDOM_8    MAGENTA    // magenta  
+#define  COLOR_RANDOM_1    RED
+#define  COLOR_RANDOM_2    ORANGE
+#define  COLOR_RANDOM_3    YELLOW
+#define  COLOR_RANDOM_4    GREEN
+#define  COLOR_RANDOM_5    CYAN
+#define  COLOR_RANDOM_6    BLUE
+#define  COLOR_RANDOM_7    PURPLE
+#define  COLOR_RANDOM_8    MAGENTA
 
 // definitions for combo switch patterns
-//
-//   test for switches in reverse order (newest to oldest)
-//
-//   street figher 4 - ryu's special moves
-//   http://www.eventhubs.com/guides/2008/jul/06/ryu-street-fighter-4-character-guide/
-//
-
 // 236 + P
 #define  COMBO_PATTERN_1A    ATTACK_RIGHT + ATTACK_P1, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN
 #define  COMBO_PATTERN_1B    ATTACK_RIGHT + ATTACK_P2, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN

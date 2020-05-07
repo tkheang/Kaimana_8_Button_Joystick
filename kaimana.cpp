@@ -23,7 +23,7 @@
 //  Created:  October 24, 2013    zonbipanda // gmail.com  -- Arduino 1.0.5 Support
 //  Revised:  October 29, 2013    zonbipanda // gmail.com
 //  Revised:  April   11, 2015    zonbipanda // gmail.com  -- Arduino 1.6.3 Support
-//
+//  Revised:  May      6, 2020    tkheang -- Added separate brightness values for joystick, action buttons, and menu buttons in Kaimana.setLED() 
 
 #define __PROG_TYPES_COMPAT__
 #include <avr/io.h>
@@ -68,61 +68,73 @@ Kaimana::Kaimana(void)
 
 void Kaimana::setLED(int index, int iR, int iG, int iB)
 {
-  if (index == LED_JOY_U || index == LED_JOY_D || index == LED_JOY_L || index == LED_JOY_R) {
-    iR = iR * 0.25;
-    iG = iG * 0.25;
-    iB = iB * 0.25;
-  }
-  else {
-  	iR = iR * _LED_BRIGHTNESS;
-  	iG = iG * _LED_BRIGHTNESS;
-  	iB = iB * _LED_BRIGHTNESS;
-  }
+    // lowest brightness for joystick
+    if (index > 27 && index < 40) {
+      iR = iR * 0.12;
+      iG = iG * 0.12;
+      iB = iB * 0.12;
+    }
+    // highest brightness for attack buttons
+    else if (index >= 0 && index < 8) {
+      iR = iR;
+      iG = iG;
+      iB = iB;
+    }
+    // medium brightness for menu buttons
+    else {
+      iR = iR * 0.25;
+      iG = iG * 0.25;
+      iB = iB * 0.25;
+    }
 
-// JOYSTICK only has 1 LED so we test for that separately, everything else has 2 LEDS
-if(index == LED_JOY_U || index == LED_JOY_D || index == LED_JOY_L || index == LED_JOY_R)
-  {
-     _led[index].r = iR;
-     _led[index].g = iG;
-     _led[index].b = iB;
-  }
-  else
-  {
-     _led[index].r = iR;
-     _led[index].g = iG;
-     _led[index].b = iB;
-     _led[index+ 1].r = iR;
-     _led[index+ 1].g = iG;
-     _led[index+ 1].b = iB;
-   }
-   
-}  
-  
+  // light up single joystick LED or LED_L3_B
+  if(index >= 27 && index < 40)
+    {
+       _led[index].r = iR;
+       _led[index].g = iG;
+       _led[index].b = iB;
+    }
+    // light up both button LEDs for each Kaimana J2
+    else
+    {
+       _led[index].r = iR;
+       _led[index].g = iG;
+       _led[index].b = iB;
+       _led[index + 1].r = iR;
+       _led[index + 1].g = iG;
+       _led[index + 1].b = iB;
+     }
+}
 
 void Kaimana::setLEDBrightness(int index, int iR, int iG, int iB,float alpha)
 {
-	iR = iR * alpha;
-	iG = iG * alpha;
-	iB = iB * alpha;
-
-// JOYSTICK only has 1 LED so we test for that separately, everything else has 2 LEDS
-if(index == LED_JOY_U || index == LED_JOY_D || index == LED_JOY_L || index == LED_JOY_R)
-  {
-   _led[index].r = iR;
-   _led[index].g = iG;
-   _led[index].b = iB;
+  if (index > 27 && index < 40) {
+      iR = iR * (alpha / 2);
+      iG = iG * (alpha / 2);
+      iB = iB * (alpha / 2);
   }
-  else
-  {
-
+  else {
+    	iR = iR * alpha;
+    	iG = iG * alpha;
+    	iB = iB * alpha;
+  }
+      
+  if(index > 27 && index < 40)
+    {
      _led[index].r = iR;
      _led[index].g = iG;
      _led[index].b = iB;
-     _led[index+ 1].r = iR;
-     _led[index+ 1].g = iG;
-     _led[index+ 1].b = iB;
-   }
-   
+    }
+    else
+    {
+  
+       _led[index].r = iR;
+       _led[index].g = iG;
+       _led[index].b = iB;
+       _led[index+ 1].r = iR;
+       _led[index+ 1].g = iG;
+       _led[index+ 1].b = iB;
+     }
 }  
 
 
@@ -133,7 +145,7 @@ void Kaimana::setALL(int iR, int iG, int iB)
   // set all leds in the array to the RGB color passed to this function
   for(index=0;index<LED_COUNT;++index)
   {
-    setLEDBrightness( index, iR, iG, iB,1);
+    setLEDBrightness( index, iR, iG, iB, 0.5);
   }
 
   // update the leds with new/current colors in the array
