@@ -65,5 +65,7 @@ int animation_idle(void);
 void defaultStartup(void);
 void tourneyModeActivate(void);
 void tourneyModeDeactivate(void);
+void KBD(void);
+void Wavedash(void);
 
 #endif

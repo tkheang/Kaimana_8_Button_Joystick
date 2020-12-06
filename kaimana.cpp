@@ -75,7 +75,7 @@ void Kaimana::setLED(int index, int iR, int iG, int iB)
       iB = iB * 0.12;
     }
     // highest brightness for attack buttons
-    else if (index >= 0 && index < 8) {
+    else if (index >= 0 && index < 16) {
       iR = iR;
       iG = iG;
       iB = iB;
@@ -106,20 +106,25 @@ void Kaimana::setLED(int index, int iR, int iG, int iB)
      }
 }
 
-void Kaimana::setLEDBrightness(int index, int iR, int iG, int iB,float alpha)
+void Kaimana::setLEDBrightness(int index, int iR, int iG, int iB, float alpha)
 {
   if (index > 27 && index < 40) {
-      iR = iR * (alpha / 2);
-      iG = iG * (alpha / 2);
-      iB = iB * (alpha / 2);
+      iR = iR * (alpha / 8);
+      iG = iG * (alpha / 8);
+      iB = iB * (alpha / 8);
   }
+  else if (index >= 0 && index < 16) {
+      iR = iR * alpha;
+      iG = iG * alpha;
+      iB = iB * alpha;
+    }
   else {
-    	iR = iR * alpha;
-    	iG = iG * alpha;
-    	iB = iB * alpha;
+    	iR = iR * (alpha / 4);
+    	iG = iG * (alpha / 4);
+    	iB = iB * (alpha / 4);
   }
       
-  if(index > 27 && index < 40)
+  if(index >= 27 && index < 40)
     {
      _led[index].r = iR;
      _led[index].g = iG;

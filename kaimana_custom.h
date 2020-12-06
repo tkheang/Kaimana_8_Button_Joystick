@@ -31,22 +31,22 @@
   #define  LED_J10     37
   #define  LED_J11     38
   #define  LED_J12     39
-  #define  LED_P4      8
-  #define  LED_P4_B    9
-  #define  LED_P3      10
-  #define  LED_P3_B    11
-  #define  LED_P2      12
-  #define  LED_P2_B    13
-  #define  LED_P1      14
-  #define  LED_P1_B    15
-  #define  LED_K1      6
-  #define  LED_K1_B    7
-  #define  LED_K2      4
-  #define  LED_K2_B    5
-  #define  LED_K3      2
-  #define  LED_K3_B    3
-  #define  LED_K4      0
-  #define  LED_K4_B    1  
+  #define  LED_P4      6
+  #define  LED_P4_B    7
+  #define  LED_P3      4
+  #define  LED_P3_B    5
+  #define  LED_P2      2
+  #define  LED_P2_B    3
+  #define  LED_P1      0
+  #define  LED_P1_B    1
+  #define  LED_K1      8
+  #define  LED_K1_B    9
+  #define  LED_K2      10
+  #define  LED_K2_B    11
+  #define  LED_K3      12
+  #define  LED_K3_B    13
+  #define  LED_K4      14
+  #define  LED_K4_B    15  
   #define  LED_HOME    20
   #define  LED_HOME_B  21
   #define  LED_SELECT  18
@@ -60,7 +60,7 @@
   #define  LED_L3      26
   #define  LED_L3_B    27 
   // maximum number of LEDs attached to Kaimana board
-  #define  LED_COUNT   40
+  #define  LED_COUNT   18
 #endif
 
 // general definitions for delays and other customizable features
@@ -130,6 +130,12 @@
 #define  COMBO_PATTERN_4A    ATTACK_RIGHT + ATTACK_P1, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN, ATTACK_NONE, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN
 #define  COMBO_PATTERN_5A    ATTACK_RIGHT + ATTACK_P3, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN, ATTACK_NONE, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN
 #define  COMBO_PATTERN_6A    ATTACK_RIGHT + ATTACK_K3, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN, ATTACK_NONE, ATTACK_RIGHT, ATTACK_DOWN + ATTACK_RIGHT, ATTACK_DOWN
+
+#define  KBD_1P              ATTACK_LEFT, ATTACK_NONE, ATTACK_LEFT, ATTACK_LEFT + ATTACK_DOWN, ATTACK_LEFT
+#define  KBD_2P              ATTACK_RIGHT, ATTACK_NONE, ATTACK_RIGHT, ATTACK_RIGHT + ATTACK_DOWN, ATTACK_RIGHT
+
+#define  WAVEDASH_1P         ATTACK_RIGHT, ATTACK_NONE, ATTACK_RIGHT, ATTACK_RIGHT + ATTACK_DOWN, ATTACK_DOWN, ATTACK_NONE, ATTACK_RIGHT
+#define  WAVEDASH_2P         ATTACK_LEFT, ATTACK_NONE, ATTACK_LEFT, ATTACK_LEFT + ATTACK_DOWN, ATTACK_DOWN, ATTACK_NONE, ATTACK_LEFT
 
 //#define  START_MENU			 ATTACK_P4 + ATTACK_P3 
 //#define  TOURNAMENT_MODE     	ATTACK_P4 + ATTACK_P3

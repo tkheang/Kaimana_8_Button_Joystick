@@ -292,6 +292,11 @@ int pollSwitches(void) {
     animation_combo_1A();
     if(kaimana.switchHistoryTest(COMBO_PATTERN_1D) || kaimana.switchHistoryTest(COMBO_PATTERN_1E) || kaimana.switchHistoryTest(COMBO_PATTERN_1F))
     animation_combo_1B();
+    // KBD (1P Side)
+    if(kaimana.switchHistoryTest(KBD_1P) || kaimana.switchHistoryTest(KBD_2P))
+    KBD();
+    if(kaimana.switchHistoryTest(WAVEDASH_1P) || kaimana.switchHistoryTest(WAVEDASH_2P))
+    Wavedash();
     
     // zero active switch counter
     iActiveSwitchCount = 0;

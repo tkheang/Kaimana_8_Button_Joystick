@@ -396,7 +396,7 @@ void animation_combo_1B(void) {
 void animation_combo_2(void) {
     kaimana.setALL(BLACK);
     kaimana.setALL(RED);
-    delay(500);
+    delay(250);
     kaimana.setALL(BLACK);
 }
 
@@ -549,4 +549,16 @@ void animation_combo_6(void) {
     kaimana.setALL(BLACK);
     delay(5);
     kaimana.setALL(BLACK);
+}
+
+void KBD(void) {
+  kaimana.setALL(BLUE);
+  delay(50);
+  kaimana.setALL(BLACK);
+}
+
+void Wavedash(void) {
+  kaimana.setALL(RED);
+  delay(50);
+  kaimana.setALL(BLACK);
 }
