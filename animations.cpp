@@ -102,9 +102,10 @@ int animation_idle(void) {
   // set initial color to BLACK
   kaimana.setALL(BLACK);
   while (true) {
+    kaimana.setLED(LED_JOY, 0, 128, 255);
     for (index = 0; index < IDLE_SIZE; ++index) {
       // update strip with new color2
-      for (i = 0; i <= LED_COUNT; ++i) {
+      for (i = 0; i < LED_COUNT; ++i) {
         kaimana.setLED(
         i,
         pgm_read_byte_near(&colorCycleData[((index+IDLE_OFFSET_2+((LED_COUNT-i)*IDLE_OFFSET))%IDLE_SIZE)]),
@@ -134,13 +135,10 @@ void tourneyModeActivate(void) {
   delay(T_DELAY);
   kaimana.setLED(LED_K4, BLACK);
   kaimana.setLED(LED_P4, BLACK);
-  kaimana.setLED(LED_START, BLACK);
-  kaimana.setLED(LED_SELECT, BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
   kaimana.setLED(LED_K3, BLACK);
   kaimana.setLED(LED_P3, BLACK);
-  kaimana.setLED(LED_HOME, BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
   kaimana.setLED(LED_K2, BLACK);
@@ -151,16 +149,10 @@ void tourneyModeActivate(void) {
   kaimana.setLED(LED_P1, BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
-  kaimana.setLED(LED_TP, BLACK);
-  for (i = 28; i < 40; i++) {
-    kaimana.setLED(i, BLACK);
-  }
+  kaimana.setLED(LED_JOY, BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
-  kaimana.setLED(LED_R3, BLACK);
-  kaimana.updateALL();
-  delay(T_DELAY);
-  kaimana.setLED(LED_L3, BLACK);
+  kaimana.setALL(BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
 }
@@ -170,16 +162,7 @@ void tourneyModeDeactivate(void) {
   kaimana.setALL(BLACK);
   kaimana.updateALL();
   delay(T_DELAY);
-  kaimana.setLED(LED_L3, RED);
-  kaimana.updateALL();
-  delay(T_DELAY);
-  kaimana.setLED(LED_R3, RED);
-  kaimana.updateALL();
-  delay(T_DELAY);
-  kaimana.setLED(LED_TP, RED);
-  for (i = 28; i < 40; i++) {
-    kaimana.setLED(i, RED);
-  }
+  kaimana.setLED(LED_JOY, RED);
   kaimana.updateALL();
   delay(T_DELAY);
   kaimana.setLED(LED_K1, RED);
@@ -192,13 +175,10 @@ void tourneyModeDeactivate(void) {
   delay(T_DELAY);
   kaimana.setLED(LED_K3, RED);
   kaimana.setLED(LED_P3, RED);
-  kaimana.setLED(LED_HOME, RED);
   kaimana.updateALL();
   delay(T_DELAY);
   kaimana.setLED(LED_K4, RED);
   kaimana.setLED(LED_P4, RED);
-  kaimana.setLED(LED_SELECT, RED);
-  kaimana.setLED(LED_START, RED);
   kaimana.updateALL();
   delay(T_DELAY);
   kaimana.setALL(BLACK);

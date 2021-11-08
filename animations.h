@@ -38,11 +38,19 @@
 
 extern Kaimana kaimana;
 
+/*
 #define IDLE_SIZE           768    // size of animation array
 #define IDLE_OFFSET_2       512    // used to create animation -- see code
 #define IDLE_OFFSET_1       256    // used to create animation -- see code
 #define IDLE_OFFSET_0         0    // used to create animation -- see code
 #define IDLE_OFFSET          12    // used to create animation -- see code
+*/
+
+#define IDLE_SIZE           768    // size of animation array
+#define IDLE_OFFSET_2       512    // used to create animation -- see code
+#define IDLE_OFFSET_1       256    // used to create animation -- see code
+#define IDLE_OFFSET_0         0    // used to create animation -- see code
+#define IDLE_OFFSET          42    // used to create animation -- see code
 
 #define FIREBALL_SIZE       768    // size of animation array
 #define FIREBALL_OFFSET_3   288    // used to create animation -- see code

@@ -16,51 +16,25 @@
 #define _IDLE_DEFAULT animation_idle();
 
 #ifdef _LED_ORDER_FULL
-  // Map function names to Kaimana J2 LED index numbers 
-  // KAIMANA -> LED_K4 -> LED_K3 -> LED_K2 -> LED_K1 -> LED_P4 -> LED_P3 -> LED_P2 -> LED_P1 -> LED_START -> LED_SELECT -> LED_HOME -> LED_TP -> LED_R3 -> LED_L3 -> LED_Jx (joystick)
-  //
-  #define  LED_J1      28
-  #define  LED_J2      29
-  #define  LED_J3      30
-  #define  LED_J4      31
-  #define  LED_J5      32
-  #define  LED_J6      33
-  #define  LED_J7      34
-  #define  LED_J8      35
-  #define  LED_J9      36
-  #define  LED_J10     37
-  #define  LED_J11     38
-  #define  LED_J12     39
-  #define  LED_P4      6
-  #define  LED_P4_B    7
-  #define  LED_P3      4
-  #define  LED_P3_B    5
-  #define  LED_P2      2
-  #define  LED_P2_B    3
-  #define  LED_P1      0
-  #define  LED_P1_B    1
-  #define  LED_K1      8
-  #define  LED_K1_B    9
-  #define  LED_K2      10
-  #define  LED_K2_B    11
-  #define  LED_K3      12
-  #define  LED_K3_B    13
-  #define  LED_K4      14
-  #define  LED_K4_B    15  
-  #define  LED_HOME    20
-  #define  LED_HOME_B  21
-  #define  LED_SELECT  18
-  #define  LED_SELECT_B 19
-  #define  LED_TP      22 // PS4 touchpad
-  #define  LED_TP_B    23
-  #define  LED_START   16
-  #define  LED_START_B 17
-  #define  LED_R3      24
-  #define  LED_R3_B    25
-  #define  LED_L3      26
-  #define  LED_L3_B    27 
+  #define  LED_JOY     16
+  #define  LED_P4      8
+  #define  LED_P4_B    9
+  #define  LED_P3      10
+  #define  LED_P3_B    11
+  #define  LED_P2      12
+  #define  LED_P2_B    13
+  #define  LED_P1      14
+  #define  LED_P1_B    15
+  #define  LED_K1      0
+  #define  LED_K1_B    1
+  #define  LED_K2      2
+  #define  LED_K2_B    3
+  #define  LED_K3      4
+  #define  LED_K3_B    5
+  #define  LED_K4      6
+  #define  LED_K4_B    7
   // maximum number of LEDs attached to Kaimana board
-  #define  LED_COUNT   18
+  #define  LED_COUNT   17
 #endif
 
 // general definitions for delays and other customizable features
@@ -69,8 +43,8 @@
 #define  FAST_COLOR_DELAY         150    // value in miliseconds
 #define  BOOT_COMPLETE_DELAY      500    // value in miliseconds
 #define  MAIN_LOOP_DELAY           50    // value in miliseconds - used main loop
-#define  IDLE_TIMEOUT_SECONDS       5    // value in seconds - normally 60 or 30 seconds but set very short for testing
-#define  IDLE_ANIMATION_DELAY       3    // value in miliseconds - use smaller value for faster idle animation playback
+#define  IDLE_TIMEOUT_SECONDS       3    // value in seconds - normally 60 or 30 seconds but set very short for testing
+#define  IDLE_ANIMATION_DELAY       1    // value in miliseconds - use smaller value for faster idle animation playback
 #define  T_DELAY      			      250    
 
 /*

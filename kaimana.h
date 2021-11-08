@@ -88,14 +88,15 @@
 // generic (may  want to prefix with COLOR_* to localize further)
 #define  BLACK    000,000,000
 #define  RED      255,000,000
-#define  GREEN    000,255,000
+#define  ORANGE   255,054,000
 #define  YELLOW   255,255,000
+#define  GREEN    000,255,000
 #define  BLUE     000,000,255
-#define  PURPLE   255,000,255
 #define  CYAN     000,255,255
-#define  WHITE    255,255,255
+#define  PURPLE   255,000,255
 #define  MAGENTA  255,000,255
-#define  ORANGE   220,127,000
+#define  WHITE    255,255,255
+
 // RGB value structure.
 typedef struct __attribute__ ((__packed__)) {
     uint8_t r;
